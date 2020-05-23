@@ -1,0 +1,38 @@
+[
+  {
+    "name": "午餐",
+    "category": "food",
+    "date": "2020/04/23",
+    "amount": 90
+  },
+  {
+    "name": "晚餐",
+    "category": "food",
+    "date": "2020/01/23",
+    "amount": 160
+  },
+  {
+    "name": "捷運",
+    "category": "transportation",
+    "date": "2020/01/25",
+    "amount": 500
+  },
+  {
+    "name": "電影：拾光人生",
+    "category": "entertainment",
+    "date": "2020/04/23",
+    "amount": 300
+  },
+  {
+    "name": "租金",
+    "category": "home",
+    "date": "2020/06/01",
+    "amount": 25000
+  },
+  {
+    "name": "家用",
+    "category": "home",
+    "date": "2020/05/01",
+    "amount": 10000
+  }
+]

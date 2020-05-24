@@ -62,7 +62,7 @@
         <div class="col-1  btn d-inline-block">用途</div>
         <div class="col-2" style="text-align: center;"><a id="sortDate" class="btn btn-primary" href="#">日期</a>
         </div>
-        <div class="col-2" style="text-align: center;"><a id="sortAmount" class="btn btn-primary" href="#">價格</a></div>
+        <div class="col-2" style="text-align: center;"><a id="sortAmount" class="btn btn-primary" href="#">金額</a></div>
       </div>
 
       {{!-- 內容 div --}}
@@ -80,11 +80,13 @@
         </div>
         <div class="col-2 d-inline-block align-self-center" name="amount" style="text-align: center;"> {{ this.amount }}
         </div>
-        <a href="/records/{{{this._id}}}/edit" style="display: inline-block;">
-          <button type="button" class="btn btn-success">修改</button>
-        </a>
-        <form action="/records/{{{this._id}}}/delete?_method=DELETE" method="POST" style="display: inline-block;">
-          <button type="submit" class="btn btn-danger">刪除</button></form>
+        <div class="col-2 d-inline-block align-self-center justify-content-between">
+          <a href="/records/{{{this._id}}}/edit" style="display: inline-block;">
+            <button type="button" class="btn btn-success">修改</button>
+          </a>
+          <form action="/records/{{{this._id}}}/delete?_method=DELETE" method="POST" style="display: inline-block;">
+            <button type="submit" class="btn btn-danger">刪除</button></form>
+        </div>
       </div>
       {{/each}}
     </div>

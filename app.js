@@ -16,9 +16,9 @@ const port = 3000
 // Locate static file
 app.use(express.static('public'))
 
-// Set template engine
-app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
-app.set('view engine', 'hbs')
+// Set template engine L32-46
+// app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
+// app.set('view engine', 'hbs')
 
 // Use body parser
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -32,14 +32,18 @@ require('./config/mongoose')
 // Load records model
 const Record = require('./models/record')
 
-// 註冊樣板 ifEquals 方法
-app.engine('hbs', exphbs({
+// 註冊樣板 view engine & ifEquals 方法
+const hbs = exphbs({
+  defaultLayout: 'main',
+  extname: '.hbs',
   helpers: {
     ifEquals: function (arg1, arg2, options) {
       if (arg1 === arg2) return options.fn(this)
     }
   }
-}))
+})
+app.engine('hbs', hbs)
+app.set('view engine', 'hbs')
 
 // Account login
 app.use(session({
@@ -59,7 +63,8 @@ app.use((req, res, next) => {
   res.locals.isAuthenticated = req.isAuthenticated()
   res.locals.success_msg = req.flash('success_msg')
   res.locals.warning_msg = req.flash('warning_msg')
-  res.locals.errors = [{ message: req.flash('error') }]
+  // res.locals.errors = [{ message: req.flash('error') }]
+  res.locals.errors = req.flash('error')
   next()
 })
 

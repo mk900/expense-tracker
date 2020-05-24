@@ -11,7 +11,12 @@ const routes = require('./routes')
 
 // Setup server
 const app = express()
-const port = 3000
+// const port = 3000
+
+// 如果在 Heroku 環境則使用 process.env.PORT
+// 否則為本地環境，使用 3000 
+const PORT = process.env.PORT || 3000
+
 
 // Locate static file
 app.use(express.static('public'))
@@ -72,6 +77,7 @@ app.use((req, res, next) => {
 app.use(routes)
 
 // Listening
-app.listen(port, () => {
-  console.log(`App is listening on localhost:${port}`)
+// 設定應用程式監聽的埠號
+app.listen(PORT, () => {
+  console.log(`App is listening on http://localhost:${PORT}`)
 })

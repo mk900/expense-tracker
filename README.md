@@ -4,8 +4,9 @@
  你的雲端記帳簿
 
 ======================================= 
-![screenshot](https://github.com/mk900/expense-tracker/blob/master/screenshot1.GIF)
-![screenshot](https://github.com/mk900/expense-tracker/blob/master/screenshot2.GIF)
+![screenshot](https://github.com/mk900/expense-tracker/blob/master/screenshot-1.GIF)
+
+![screenshot](https://github.com/mk900/expense-tracker/blob/master/screenshot-2.GIF)
  
 **功能**
 --
